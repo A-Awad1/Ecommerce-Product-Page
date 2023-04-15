@@ -3,15 +3,3 @@ $main-transition : 0.3s;
 $main-border-radius:6px;
 
 /* colors */
-
-// light mode
-html[data-mode="Light"]{
-  --text-color : black;
-  --background-color :  White;
-}
-
-// dark mode
-html[data-mode="Dark"]{
-  --text-color : White;
-  --background-color :  black
-}
