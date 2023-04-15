@@ -21,6 +21,7 @@ Technologies Used:
 
 - Vue 3
 - Vuex
+- Vue Router
 - HTML
 - SCSS
 - JavaScript
