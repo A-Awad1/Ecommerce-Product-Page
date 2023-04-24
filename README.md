@@ -1,6 +1,6 @@
 # E-commerce product page solution
 
-**Project Progress : ![40%](https://progress-bar.dev/40/?title=done)**
+**Project Progress : ![60%](https://progress-bar.dev/40/?title=done)**
 
 <!-- **[See Website Live]()** -->
 
