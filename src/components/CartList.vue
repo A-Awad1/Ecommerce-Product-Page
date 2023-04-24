@@ -17,10 +17,12 @@
             <span v-text="product.name"></span>
             <span>
               <span class="price">{{ product.price.toFixed(2) }}</span>
-              <span class="quantity"> x {{ product.quantity }} </span>
-              <span class="full-price">{{
-                (product.price * product.quantity).toFixed(2)
-              }}</span>
+              <template v-if="product.quantity > 1">
+                <span class="quantity"> x {{ product.quantity }} </span>
+                <span class="full-price">{{
+                  (product.price * product.quantity).toFixed(2)
+                }}</span>
+              </template>
             </span>
           </div>
           <img
@@ -47,12 +49,19 @@ export default {
 
 <style lang="scss">
 section.cart-list {
-  position: absolute;
-  top: calc(100% + 15px);
-  right: -60px;
   border-radius: $main-border-radius;
   box-shadow: 0px 10px 20px 0px $grayish-blue-color;
   background-color: #fff;
+  position: absolute;
+  top: calc(100% + 15px);
+  right: -60px;
+  @include underTablet {
+    right: auto;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+  }
   > span {
     user-select: none;
     display: block;
@@ -91,9 +100,8 @@ section.cart-list {
           flex-direction: column;
           gap: 3px;
           white-space: nowrap;
+
           > span {
-            .quantity {
-            }
             .full-price {
               font-weight: 700;
               color: $important-text-color;

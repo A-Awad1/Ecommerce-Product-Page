@@ -12,7 +12,11 @@ export default createStore({
     ],
     // cart: null,
   },
-  getters: {},
+  getters: {
+    productsNumber: function (state) {
+      return state.cart.reduce((acc, e) => acc + e.quantity, 0);
+    },
+  },
   mutations: {},
   actions: {},
   modules: {},
