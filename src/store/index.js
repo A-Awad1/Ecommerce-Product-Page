@@ -1,7 +1,9 @@
 import { createStore } from "vuex";
+import JsonProducts from "../json.json";
 
 export default createStore({
   state: {
+    productData: JsonProducts[0],
     cart: [
       {
         id: 1,
