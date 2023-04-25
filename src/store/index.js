@@ -10,7 +10,7 @@ export default createStore({
         quantity: 3,
       },
     ],
-    // cart: null,
+    // cart: [],
   },
   getters: {
     productsNumber: function (state) {
