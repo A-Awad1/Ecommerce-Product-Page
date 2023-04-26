@@ -164,6 +164,7 @@ nav {
           position: relative;
           padding: 40px 0 44px;
           border-bottom: 4px solid transparent;
+          transition: $main-transition;
           @include underTablet {
             padding: 0;
             border: none;
@@ -209,6 +210,9 @@ nav {
           cursor: pointer;
           width: 22px;
           height: 20px;
+          path {
+            transition: $main-transition;
+          }
           &:hover {
             path {
               fill: $important-text-color;
@@ -219,6 +223,7 @@ nav {
           cursor: pointer;
           border-radius: 50%;
           width: 50px;
+          transition: $main-transition;
           @include underLargeMobile {
             width: 30px;
           }
