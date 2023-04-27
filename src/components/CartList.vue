@@ -49,18 +49,25 @@ export default {
 
 <style lang="scss">
 section.cart-list {
+  user-select: none;
   border-radius: $main-border-radius;
   box-shadow: 0px 10px 20px 0px $grayish-blue-color;
   background-color: #fff;
   position: absolute;
   top: calc(100% + 15px);
   right: -60px;
+  min-height: 155px;
+  min-width: 360px;
   @include underTablet {
     right: auto;
     top: 95px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
+    width: 360px;
+  }
+  @include underLargeMobile {
+    width: auto;
   }
   > span {
     user-select: none;
@@ -71,8 +78,8 @@ section.cart-list {
     border-bottom: 1px solid $grayish-blue-color;
   }
   > div.empty {
-    min-height: 155px;
-    min-width: 330px;
+    height: 155px;
+    width: 360px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,6 +124,7 @@ section.cart-list {
         }
         .icon-delete {
           cursor: pointer;
+          margin-left: auto;
         }
       }
     }

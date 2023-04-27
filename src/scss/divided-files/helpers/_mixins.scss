@@ -19,7 +19,7 @@
   }
 }
 @mixin aboveTablet{
-  @media (min-width: 768px) {
+  @media (min-width: 768.1px) {
     @content;
   }
 }
