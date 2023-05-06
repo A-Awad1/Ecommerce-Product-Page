@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss">
 .product-imgs-popup {
+  display: none;
   @include underMedium {
     display: none;
   }
@@ -65,6 +66,36 @@ export default {
     .all-imgs-box {
       width: 375px;
       margin: auto;
+      div {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          opacity: 0;
+          // opacity: 0.7;
+        }
+        &:hover::after {
+          opacity: 0.5;
+        }
+        // border-color: $orange-color;
+      }
+    }
+    .arrows {
+      div {
+        display: flex;
+        width: 44px;
+        &:first-of-type {
+          left: -22px;
+        }
+        &:last-of-type {
+          right: -22px;
+        }
+      }
     }
   }
 }

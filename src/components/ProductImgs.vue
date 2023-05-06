@@ -7,15 +7,17 @@
         "
         :alt="`product-${productData.id}-main-image`"
       />
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 1 3 9l8 8" fill-rule="evenodd" />
-        </svg>
-      </div>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg">
-          <path d="m2 1 8 8-8 8" fill-rule="evenodd" />
-        </svg>
+      <div class="arrows">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 1 3 9l8 8" fill-rule="evenodd" />
+          </svg>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <path d="m2 1 8 8-8 8" fill-rule="evenodd" />
+          </svg>
+        </div>
       </div>
     </div>
     <div class="all-imgs-box">
@@ -72,42 +74,44 @@ export default {
         width: 100%;
       }
     }
-    div {
-      @include aboveTablet {
-        display: none;
-      }
-      svg {
-        width: 12px;
-        height: 18px;
-        transform: scale(0.7);
-        path {
-          stroke-width: 4;
-          stroke: hsl(220, 13%, 13%);
-          fill: none;
-          transition: $main-transition;
+    .arrows {
+      div {
+        @include aboveTablet {
+          display: none;
         }
-      }
-      &:hover {
-        svg > path {
-          stroke: $orange-color;
+        svg {
+          width: 12px;
+          height: 18px;
+          transform: scale(0.7);
+          path {
+            stroke-width: 4;
+            stroke: hsl(220, 13%, 13%);
+            fill: none;
+            transition: $main-transition;
+          }
         }
-      }
-      position: absolute;
-      background-color: #fff;
-      border-radius: 50%;
-      aspect-ratio: 1/1;
-      width: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      &:first-of-type {
-        left: 20px;
-      }
-      &:last-of-type {
-        right: 20px;
+        &:hover {
+          svg > path {
+            stroke: $orange-color;
+          }
+        }
+        position: absolute;
+        background-color: #fff;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &:first-of-type {
+          left: 20px;
+        }
+        &:last-of-type {
+          right: 20px;
+        }
       }
     }
   }
@@ -124,17 +128,17 @@ export default {
       border-radius: 10px;
       border: 2px solid transparent;
       overflow: hidden;
+      cursor: pointer;
+      transition: $main-transition;
+      &:hover {
+        opacity: 0.5;
+      }
+      // opacity: 0.3;
       // border-color: $orange-color;
       img {
-        transition: $main-transition;
         max-width: 100%;
         height: 100%;
-        cursor: pointer;
         user-select: none;
-        &:hover {
-          opacity: 0.5;
-        }
-        // opacity: 0.3;
       }
     }
   }
