@@ -3,17 +3,17 @@
     <div class="displayed-image">
       <img
         :src="
-          require(`../assets/images/products/${productData.id}/${productData.images[0]}`)
+          require(`../assets/images/products/${productData.id}/${productData.images[displayedImageIndex]}`)
         "
         :alt="`product-${productData.id}-main-image`"
       />
       <div class="arrows">
-        <div>
+        <div @click="--displayedImageIndex">
           <svg xmlns="http://www.w3.org/2000/svg">
             <path d="M11 1 3 9l8 8" fill-rule="evenodd" />
           </svg>
         </div>
-        <div>
+        <div @click="++displayedImageIndex">
           <svg xmlns="http://www.w3.org/2000/svg">
             <path d="m2 1 8 8-8 8" fill-rule="evenodd" />
           </svg>
@@ -21,11 +21,15 @@
       </div>
     </div>
     <div class="all-imgs-box">
-      <div v-for="img in productData.images" :key="img">
+      <div
+        v-for="(img, index) in productData.images"
+        :key="img"
+        :class="index === displayedImageIndex ? 'chosen-img' : ''"
+      >
         <img
-          class="chosen-img"
           :src="require(`../assets/images/products/${productData.id}/${img}`)"
           :alt="`product-${productData.id}-extra-image`"
+          @click="displayedImageIndex = index"
         />
       </div>
     </div>
@@ -39,10 +43,21 @@ export default {
   data: function () {
     return {
       itemsNumber: 0,
+      displayedImageIndex: 0,
     };
   },
   computed: {
     ...mapState(["productData"]),
+  },
+  watch: {
+    displayedImageIndex: function (v) {
+      let lastId = this.productData.images.length - 1;
+      if (v < 0) {
+        this.displayedImageIndex = lastId;
+      } else if (v > lastId) {
+        this.displayedImageIndex = 0;
+      }
+    },
   },
 };
 </script>
@@ -133,12 +148,19 @@ export default {
       &:hover {
         opacity: 0.5;
       }
-      // opacity: 0.3;
-      // border-color: $orange-color;
       img {
         max-width: 100%;
         height: 100%;
         user-select: none;
+      }
+      &.chosen-img {
+        border-color: $orange-color;
+        &:hover {
+          opacity: 1;
+        }
+        img {
+          opacity: 0.3;
+        }
       }
     }
   }
