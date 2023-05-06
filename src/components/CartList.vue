@@ -29,6 +29,7 @@
             class="icon-delete"
             src="../assets/images/icon-delete.svg"
             alt="icon-delete"
+            @click="removeProduct(product.id)"
           />
         </div>
       </div>
@@ -38,17 +39,21 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "CartList",
   computed: {
     ...mapState(["cart"]),
+  },
+  methods: {
+    ...mapActions(["removeProduct"]),
   },
 };
 </script>
 
 <style lang="scss">
 section.cart-list {
+  z-index: 999;
   user-select: none;
   border-radius: $main-border-radius;
   box-shadow: 0px 10px 20px 0px $grayish-blue-color;

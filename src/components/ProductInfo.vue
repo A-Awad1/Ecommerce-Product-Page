@@ -16,15 +16,23 @@
     </div>
     <div class="btns-box">
       <div class="items-number-box">
-        <button class="decrease">
+        <button
+          class="decrease"
+          @click="itemsNumber--"
+          :class="itemsNumber === 0 ? 'disabled' : ''"
+        >
           <img src="../assets/images/icon-minus.svg" alt="icon-minus" />
         </button>
         <span v-text="itemsNumber"></span>
-        <button class="increase">
+        <button class="increase" @click="itemsNumber++">
           <img src="../assets/images/icon-plus.svg" alt="icon-plus" />
         </button>
       </div>
-      <button class="add-cart">
+      <button
+        class="add-cart"
+        @click="addProduct(itemsNumber)"
+        :class="itemsNumber === 0 ? 'disabled' : ''"
+      >
         <svg
           class="icon-cart"
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +47,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "ProductInfo",
   data: function () {
@@ -49,6 +57,9 @@ export default {
   },
   computed: {
     ...mapState(["productData", "iconCartD"]),
+  },
+  methods: {
+    ...mapActions(["addProduct"]),
   },
 };
 </script>
@@ -160,6 +171,7 @@ export default {
       align-items: center;
       justify-content: space-between;
       flex-basis: 30%;
+      user-select: none;
       font: {
         weight: bold;
         size: 14px;
@@ -207,5 +219,9 @@ export default {
       }
     }
   }
+}
+.disabled {
+  pointer-events: none;
+  user-select: none;
 }
 </style>
