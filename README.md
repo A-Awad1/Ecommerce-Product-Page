@@ -1,7 +1,5 @@
 # E-commerce product page solution
 
-**Project Progress : ![99%](https://progress-bar.dev/99/?title=done)**
-
 <!-- **[See Website Live]()** -->
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6).
@@ -29,24 +27,19 @@ Technologies Used:
 
 <!-- **[See Website Live]()** -->
 
-<!--
 Output design Screenshots:
 
-Large Screens Home Page :
-![Output](/Output-design-screenshots/1.home-large-screens.png)
+Large Screens :
 
-Medium Screens Home Page :
-![Output](/Output-design-screenshots/2.home-medium-screens.png)
+![Output](/Output-design-screenshots/1.png)
+![Output](/Output-design-screenshots/2.png)
 
-Mobile Screens Home Page :
-![Output](/Output-design-screenshots/3.home-mobile-screens.png)
+Medium Screens:
 
-Large Screens Details Page :
-![Output](/Output-design-screenshots/4.details-large-screens.png)
+![Output](/Output-design-screenshots/3.png)
 
-Medium Screens Details Page :
-![Output](/Output-design-screenshots/5.details-medium-screens.png)
+Mobile Screens:
 
-Mobile Screens Details Page :
-![Output](/Output-design-screenshots/6.details-mobile-screens.png)
--->
+![Output](/Output-design-screenshots/4.png)
+![Output](/Output-design-screenshots/5.png)
+![Output](/Output-design-screenshots/6.png)

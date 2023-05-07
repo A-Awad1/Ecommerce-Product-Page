@@ -2,6 +2,7 @@
   <div class="product-imgs">
     <div class="displayed-image">
       <img
+        @click="toggleImgsPopup()"
         :src="
           require(`../assets/images/products/${productData.id}/${productData.images[displayedImageIndex]}`)
         "
@@ -25,11 +26,11 @@
         v-for="(img, index) in productData.images"
         :key="img"
         :class="index === displayedImageIndex ? 'chosen-img' : ''"
+        @click="displayedImageIndex = index"
       >
         <img
           :src="require(`../assets/images/products/${productData.id}/${img}`)"
           :alt="`product-${productData.id}-extra-image`"
-          @click="displayedImageIndex = index"
         />
       </div>
     </div>
@@ -37,7 +38,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "ProductImgs",
   data: function () {
@@ -48,6 +49,9 @@ export default {
   },
   computed: {
     ...mapState(["productData"]),
+  },
+  methods: {
+    ...mapMutations(["toggleImgsPopup"]),
   },
   watch: {
     displayedImageIndex: function (v) {

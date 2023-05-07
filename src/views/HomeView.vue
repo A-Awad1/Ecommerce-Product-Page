@@ -3,7 +3,7 @@
     <section class="main-section">
       <ProductImgs />
       <ProductInfo />
-      <ProductImgsPopup />
+      <ProductImgsPopup v-if="imgsPopup === true" />
     </section>
   </div>
 </template>
@@ -12,12 +12,16 @@
 import ProductImgs from "@/components/ProductImgs";
 import ProductInfo from "@/components/ProductInfo";
 import ProductImgsPopup from "@/components/ProductImgsPopup";
+import { mapState } from "vuex";
 export default {
   name: "HomeView",
   components: {
     ProductImgs,
     ProductInfo,
     ProductImgsPopup,
+  },
+  computed: {
+    ...mapState(["imgsPopup"]),
   },
 };
 </script>

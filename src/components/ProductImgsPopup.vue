@@ -3,7 +3,12 @@
     <div class="overlay"></div>
     <div class="content">
       <div class="svg-box">
-        <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          width="14"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+          @click="toggleImgsPopup"
+        >
           <path
             d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
             fill-rule="evenodd"
@@ -17,17 +22,20 @@
 
 <script>
 import ProductImgs from "@/components/ProductImgs";
+import { mapMutations } from "vuex";
 export default {
   name: "ProductImgsPopup",
   components: {
     ProductImgs,
+  },
+  methods: {
+    ...mapMutations(["toggleImgsPopup"]),
   },
 };
 </script>
 
 <style lang="scss">
 .product-imgs-popup {
-  display: none;
   @include underMedium {
     display: none;
   }
@@ -77,12 +85,21 @@ export default {
           height: 100%;
           background-color: #fff;
           opacity: 0;
-          // opacity: 0.7;
         }
-        &:hover::after {
-          opacity: 0.5;
+        &:hover {
+          opacity: 1;
+          &::after {
+            opacity: 0.6;
+          }
         }
-        // border-color: $orange-color;
+        &.chosen-img {
+          &::after {
+            opacity: 0.8;
+          }
+          img {
+            opacity: 1;
+          }
+        }
       }
     }
     .arrows {

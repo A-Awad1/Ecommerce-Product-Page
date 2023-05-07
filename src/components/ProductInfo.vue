@@ -76,6 +76,7 @@ export default {
     text-transform: uppercase;
     color: $orange-color;
     letter-spacing: 1px;
+    user-select: none;
     font: {
       weight: 700;
       size: 14px;
@@ -88,6 +89,7 @@ export default {
     color: $important-text-color;
     line-height: 1;
     margin: 15px 0 30px;
+    user-select: none;
     font: {
       weight: 700;
       size: 40px;
@@ -100,6 +102,7 @@ export default {
   .product-description {
     color: $main-text-color;
     line-height: 1.4;
+    user-select: none;
     @include underMedium {
       font-size: 14px;
     }
