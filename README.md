@@ -1,6 +1,6 @@
 # E-commerce product page solution
 
-<!-- **[See Website Live]()** -->
+**[See Website Live](https://ecommerce-product-page-a-awad.netlify.app/)**
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6).
 
@@ -25,7 +25,7 @@ Technologies Used:
 - JavaScript
 - Font Awesome Library
 
-<!-- **[See Website Live]()** -->
+**[See Website Live](https://ecommerce-product-page-a-awad.netlify.app/)**
 
 Output design Screenshots:
 
